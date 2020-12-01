@@ -633,12 +633,12 @@ void lccm_rewiring_t::shuffle_edges_ec_none(double nb_times_nb_edges)
     ++nb_swaps;
   }
   // Checks whether all edges have been swapped at least once.
-  bool all_visited = false;
+  // bool all_visited = false;
   for(int e(0); e<nb_edges; ++e)
   {
     if(!visited[e])
     {
-      std::cerr << "WARNING: Not all vertices have been swapped at least once." << std::endl;
+      std::cerr << "WARNING: Not all edges have been swapped at least once." << std::endl;
       break;
     }
   }
@@ -763,12 +763,12 @@ void lccm_rewiring_t::shuffle_edges_ec_LKxLK(double nb_times_nb_edges)
     ++nb_swaps;
   }
   // Checks whether all edges have been swapped at least once.
-  bool all_visited = false;
+  // bool all_visited = false;
   for(int e(0); e<nb_edges; ++e)
   {
     if(!visited[e])
     {
-      std::cerr << "WARNING: Not all vertices have been swapped at least once." << std::endl;
+      std::cerr << "WARNING: Not all edges have been swapped at least once." << std::endl;
       break;
     }
   }
@@ -892,12 +892,12 @@ void lccm_rewiring_t::shuffle_edges_ec_KxK(double nb_times_nb_edges)
     ++nb_swaps;
   }
   // Checks whether all edges have been swapped at least once.
-  bool all_visited = false;
+  // bool all_visited = false;
   for(int e(0); e<nb_edges; ++e)
   {
     if(!visited[e])
     {
-      std::cerr << "WARNING: Not all vertices have been swapped at least once." << std::endl;
+      std::cerr << "WARNING: Not all edges have been swapped at least once." << std::endl;
       break;
     }
   }
@@ -983,6 +983,7 @@ void lccm_rewiring_t::update_stubs(int v1, int l1, int old_neigh_layer, int new_
 void lccm_rewiring_t::write_edgelist(std::string filename, int width)
 {
   // Builds the ID2Name vector.
+  ID2Name.clear();
   ID2Name.resize(nb_vertices);
   for(auto el : Name2ID)
   {
